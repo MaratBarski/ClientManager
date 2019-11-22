@@ -1,0 +1,54 @@
+<br>
+
+<table *ngIf="userList">
+    <tr>
+        <th>Open</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let user of userList|async">
+        <td>
+            <a routerLink="/UserInfo/{{user.id}}">Select</a>
+        </td>
+        <td>
+            <app-user-row [isUpdated]="isUpdated(user)" [text]="user?.firstName" [model]="updatedUser" prop="firstName">
+            </app-user-row>
+        </td>
+        <td>
+            <app-user-row [isUpdated]="isUpdated(user)" [text]="user?.lastName" [model]="updatedUser" prop="lastName">
+            </app-user-row>
+        </td>
+        <td>
+            <app-user-row [isUpdated]="isUpdated(user)" [text]="user?.address" [model]="updatedUser" prop="address">
+            </app-user-row>
+        </td>
+        <td>
+            <app-user-row [isUpdated]="isUpdated(user)" [text]="user?.email" [model]="updatedUser" prop="email">
+            </app-user-row>
+        </td>
+        <td>
+            <div *ngIf="!isUpdated(user)">
+                <app-button (click)="delete(user)" text="Delete"></app-button>
+                <app-button (click)="edit(user)" text="Edit"></app-button>
+            </div>
+            <div *ngIf="isUpdated(user)">
+                <app-button (click)="update()" text="Update"></app-button>
+                <app-button (click)="updatedUser=null" text="Cancel"></app-button>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>Add new user</td>
+        <td><input [(ngModel)]="newUser.firstName"></td>
+        <td><input [(ngModel)]="newUser.lastName"></td>
+        <td><input [(ngModel)]="newUser.address"></td>
+        <td><input [(ngModel)]="newUser.email"></td>
+        <td>
+            <app-button [disabled]="!newUser.firstName || !newUser.lastName || !newUser.address || !newUser.email"
+                (click)="add()" text="Add"></app-button>
+        </td>
+    </tr>
+</table>

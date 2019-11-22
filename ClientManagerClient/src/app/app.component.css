@@ -1,0 +1,6 @@
+.menu, .main-content{
+    display: table;
+    margin: 2px auto;
+}
+.menu div{display: flex;}
+.menu-item{margin: 4px;}

@@ -1,0 +1,10 @@
+.main{
+    margin: 10px auto;
+    display: table;
+}
+.main div{
+    margin: 10px;
+}
+.btn{
+    cursor: pointer;
+}

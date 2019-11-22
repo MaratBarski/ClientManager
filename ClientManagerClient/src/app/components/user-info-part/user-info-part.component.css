@@ -1,0 +1,11 @@
+.title,.value{padding: 4px;font-size: 1rem;}
+.title{
+    color: #b00;
+}
+.value{
+    color: #000;
+}
+.info{
+    display: grid;
+    grid-template-columns: auto auto;
+}

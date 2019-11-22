@@ -1,0 +1,8 @@
+<div class="info" *ngIf="user">
+    <app-user-info-part title="First Name" [value]="(user|async)?.firstName"></app-user-info-part>
+    <app-user-info-part title="Last Name" [value]="(user|async)?.lastName"></app-user-info-part>
+    <app-user-info-part title="Address" [value]="(user|async)?.address"></app-user-info-part>
+    <app-user-info-part title="Email" [value]="(user|async)?.email"></app-user-info-part>
+</div>
+<br/>
+<a routerLink="/Users">Back</a>

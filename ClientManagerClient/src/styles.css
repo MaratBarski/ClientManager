@@ -1,0 +1,29 @@
+body{
+    margin: 10px;
+}
+table th{
+    background-color: black;
+    color:white;
+    padding: 6px;
+}
+button{
+    cursor: pointer;
+}
+td, button, div, span, th, a, input{
+    font-size: 1.2rem;
+}
+table{
+    border:1px solid #ccc;
+    border-collapse: collapse;
+}
+td{
+    border:1px solid #ccc;
+    border-collapse: collapse;
+}
+a{
+    text-decoration: none;
+    color:#666666;
+}
+a:hover{
+    text-decoration: underline;
+}

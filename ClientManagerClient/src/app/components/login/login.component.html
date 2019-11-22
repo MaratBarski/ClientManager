@@ -1,0 +1,14 @@
+<div *ngIf="!isLoding" class="main">
+    <div>User name:&nbsp;
+        <input type="text" [(ngModel)]="userName" />
+    </div>
+    <div>Password:&nbsp;
+        <input type="password" [(ngModel)]="userPassword" />
+    </div>
+    <div>
+        <button class="btn" [disabled]="!userName || !userPassword" (click)="login()">Login</button>
+    </div>
+</div>
+<div *ngIf="isLoding">
+    <app-image path="loading.gif"></app-image>
+</div>
