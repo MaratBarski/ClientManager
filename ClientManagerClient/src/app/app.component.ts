@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Exam';
   constructor(
-    private userService: UserService,
+    public userService: UserService,
     private router: Router) { }
   signOut(): void {
     this.userService.logOut();
